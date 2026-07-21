@@ -1,0 +1,20 @@
+diff --git a/packages/cli/package.json b/packages/cli/package.json
+index 32f98c3..a433b04 100644
+--- a/packages/cli/package.json
++++ b/packages/cli/package.json
+@@ -1,6 +1,6 @@
+ {
+-  "name": "@memories.sh/cli",
+-  "version": "0.7.9",
++  "name": "@shibasishpaul/memories-cli",
++  "version": "0.7.9-shibasishpaul.1",
+   "description": "A local-first memory layer for AI coding agents — persistent context for Claude, Cursor, and more",
+   "type": "module",
+   "license": "Apache-2.0",
+diff --git a/packages/cli/src/lib/version.ts b/packages/cli/src/lib/version.ts
+index 3bfb868..141fd45 100644
+--- a/packages/cli/src/lib/version.ts
++++ b/packages/cli/src/lib/version.ts
+@@ -1 +1 @@
+-export const CLI_VERSION = "0.7.9";
++export const CLI_VERSION = "0.7.9-shibasishpaul.1";

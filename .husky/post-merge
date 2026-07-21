@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+set -e
+
+PATCH="install/rename-and-version.patch"
+
+if [ ! -f "$PATCH" ]; then
+  exit 0
+fi
+
+if git apply --check "$PATCH" 2>/dev/null; then
+  git apply "$PATCH"
+  git add -u
+  git commit -m "chore(install): apply rename+version patch after merge"
+  echo "install: applied rename-and-version patch successfully"
+else
+  echo "ERROR: $PATCH does not apply cleanly." >&2
+  echo "Upstream (via local/main) likely changed packages/cli/package.json in a" >&2
+  echo "conflicting way. Regenerate the patch manually before building this branch." >&2
+  exit 1
+fi
